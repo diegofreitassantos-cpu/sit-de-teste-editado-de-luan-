@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parts J&L - Peças e Acessórios para Celular</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <!-- Estilos do site -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Estilos do painel admin -->
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+<!-- ===== SITE PRINCIPAL ===== -->
+
+<!-- HEADER -->
+<header>
+    <div class="header-container">
+        <div class="logo-container">
+            <img src="https://www.genspark.ai/api/files/s/vGKZtrbc" alt="Parts J&L Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#inicio">Início</a></li>
+                <li><a href="#produtos">Produtos</a></li>
+                <li><a href="#categorias">Categorias</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+        <div style="display:flex;align-items:center;gap:0.8rem;">
+            <a href="#" class="btn-admin-header" id="btnAbrirAdmin" title="Painel Admin">
+                <i class="fas fa-lock"></i>
+                <span>Admin</span>
+            </a>
+            <a href="#" class="btn-whatsapp-header" id="btnWhatsHeader">
+                <i class="fab fa-whatsapp"></i>
+                WhatsApp
+            </a>
+        </div>
+    </div>
+</header>
+
+<!-- HERO SECTION -->
+<section class="hero" id="inicio">
+    <div class="hero-particles" id="particlesContainer"></div>
+    <div class="hero-content">
+        <h1>PARTS J&L</h1>
+        <h2>Peças e Acessórios para Celular de Alta Qualidade</h2>
+        <p>Telas | Baterias | Tampas | Conectores | e muito mais!</p>
+        <a href="#produtos" class="btn-cta">VER PRODUTOS</a>
+    </div>
+</section>
+
+<!-- BARRA DE CATEGORIAS -->
+<div class="categorias-bar" id="categorias">
+    <div class="categorias-container">
+        <ul class="categorias-list">
+            <li class="categoria-item active" data-categoria="todas"><i class="fas fa-th"></i> Todas</li>
+            <li class="categoria-item" data-categoria="telas"><i class="fas fa-mobile-alt"></i> Telas</li>
+            <li class="categoria-item" data-categoria="baterias"><i class="fas fa-battery-full"></i> Baterias</li>
+            <li class="categoria-item" data-categoria="conectores"><i class="fas fa-plug"></i> Conectores</li>
+            <li class="categoria-item" data-categoria="tampas"><i class="fas fa-tablet-alt"></i> Tampas Traseiras</li>
+            <li class="categoria-item" data-categoria="ferramentas"><i class="fas fa-tools"></i> Ferramentas</li>
+            <li class="categoria-item" data-categoria="acessorios"><i class="fas fa-box"></i> Acessórios</li>
+            <li class="categoria-item" data-categoria="cabos"><i class="fas fa-headphones"></i> Fones/Cabos</li>
+        </ul>
+    </div>
+</div>
+
+<!-- BUSCA -->
+<section class="busca-section">
+    <div class="busca-container">
+        <input type="text" id="campoBusca" placeholder="Buscar produtos...">
+        <i class="fas fa-search busca-icon"></i>
+    </div>
+</section>
+
+<!-- PRODUTOS -->
+<section class="produtos-section" id="produtos">
+    <div class="produtos-header">
+        <h2>Nossos Produtos</h2>
+        <span class="produtos-count" id="produtosCount">0 produtos</span>
+    </div>
+    <div class="produtos-grid" id="produtosGrid"></div>
+    <div class="mensagem-vazio" id="mensagemVazio" style="display:none;">
+        <i class="fas fa-search"></i>
+        <h3>Nenhum produto encontrado</h3>
+        <p>Tente buscar com outros termos ou navegue pelas categorias</p>
+    </div>
+</section>
+
+<!-- POR QUE ESCOLHER -->
+<section class="escolher-section" id="sobre">
+    <div class="escolher-container">
+        <h2>Por Que Escolher a Parts J&L?</h2>
+        <div class="escolher-grid">
+            <div class="escolher-card"><div class="escolher-icon">✅</div><h3>Peças Originais e Compatíveis</h3><p>Qualidade garantida em todos os produtos</p></div>
+            <div class="escolher-card"><div class="escolher-icon">🚚</div><h3>Entrega Rápida</h3><p>Enviamos para todo o Brasil com agilidade</p></div>
+            <div class="escolher-card"><div class="escolher-icon">🔧</div><h3>Suporte Técnico</h3><p>Equipe especializada para te ajudar</p></div>
+            <div class="escolher-card"><div class="escolher-icon">💰</div><h3>Melhor Preço Garantido</h3><p>Preços competitivos e condições especiais</p></div>
+        </div>
+    </div>
+</section>
+
+<!-- FORMAS DE PAGAMENTO -->
+<section class="pagamento-section">
+    <h2>Formas de Pagamento</h2>
+    <div class="pagamento-grid">
+        <div class="pagamento-card destaque"><div class="pagamento-icon">💚</div><h3>PIX</h3><p>Pagamento instantâneo</p><span class="pagamento-desconto">5% DE DESCONTO</span></div>
+        <div class="pagamento-card"><div class="pagamento-icon">💳</div><h3>Cartão de Crédito</h3><p>Até 12x sem juros</p></div>
+        <div class="pagamento-card"><div class="pagamento-icon">💳</div><h3>Cartão de Débito</h3><p>À vista com segurança</p></div>
+        <div class="pagamento-card"><div class="pagamento-icon">🎫</div><h3>Boleto Bancário</h3><p>À vista com desconto</p></div>
+    </div>
+</section>
+
+<!-- CONTATO CTA -->
+<section class="contato-cta" id="contato">
+    <div class="contato-content">
+        <h2>Fale Conosco pelo WhatsApp!</h2>
+        <p id="numeroWhatsDisplay">📱 (11) 99999-9999</p>
+        <p class="horario" id="horarioDisplay">Seg-Sex: 8h às 18h | Sáb: 8h às 13h</p>
+        <a href="#" class="btn-whatsapp-grande" id="btnWhatsGrande">
+            <i class="fab fa-whatsapp"></i>
+            FALAR NO WHATSAPP
+        </a>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <div class="footer-container">
+        <div class="footer-logo">
+            <img src="https://www.genspark.ai/api/files/s/vGKZtrbc" alt="Parts J&L Logo">
+            <p class="footer-sobre">Parts J&L - Especialistas em peças e acessórios para celular. Qualidade e confiança desde 2020.</p>
+        </div>
+        <div class="footer-section">
+            <h3>Links Rápidos</h3>
+            <ul class="footer-links">
+                <li><a href="#inicio">Início</a></li>
+                <li><a href="#produtos">Produtos</a></li>
+                <li><a href="#categorias">Categorias</a></li>
+                <li><a href="#sobre">Sobre Nós</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>Categorias</h3>
+            <ul class="footer-links">
+                <li><a href="#" data-categoria="telas">Telas</a></li>
+                <li><a href="#" data-categoria="baterias">Baterias</a></li>
+                <li><a href="#" data-categoria="conectores">Conectores</a></li>
+                <li><a href="#" data-categoria="tampas">Tampas Traseiras</a></li>
+                <li><a href="#" data-categoria="ferramentas">Ferramentas</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>Redes Sociais</h3>
+            <div class="social-icons">
+                <a href="#" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" id="socialWhats" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                <a href="#" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a>
+            </div>
+            <p style="margin-top:1rem;color:var(--texto-cinza);" id="instagramDisplay">@partsjel</p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2025 Parts J&L. Todos os direitos reservados.</p>
+    </div>
+</footer>
+
+<!-- BOTÃO FLUTUANTE WHATSAPP -->
+<div class="whatsapp-float" id="whatsFloat"><i class="fab fa-whatsapp"></i></div>
+
+<!-- MODAL PRODUTO -->
+<div class="modal" id="modalProduto">
+    <div class="modal-content">
+        <button class="modal-close" id="modalClose">&times;</button>
+        <div class="modal-imagem" id="modalImagem"><i class="fas fa-mobile-alt produto-placeholder"></i></div>
+        <h2 class="modal-nome" id="modalNome"></h2>
+        <p class="modal-descricao" id="modalDescricao"></p>
+        <div class="modal-preco" id="modalPreco"></div>
+        <button class="btn-comprar" id="modalComprar" style="width:100%;"><i class="fab fa-whatsapp"></i> COMPRAR VIA WHATSAPP</button>
+    </div>
+</div>
+
+
+<!-- ===== PAINEL ADMIN ===== -->
+
+<!-- LOGIN OVERLAY -->
+<div id="adminLoginOverlay">
+    <div class="login-box">
+        <div class="login-logo">🔐</div>
+        <h2>Acesso Admin</h2>
+        <p>Parts J&L — Painel de Gerenciamento</p>
+        <div class="login-field">
+            <label>Usuário</label>
+            <input type="text" id="loginUsuario" placeholder="Digite o usuário" autocomplete="username">
+        </div>
+        <div class="login-field">
+            <label>Senha</label>
+            <input type="password" id="loginSenha" placeholder="Digite a senha" autocomplete="current-password">
+        </div>
+        <button class="btn-login" id="btnFazerLogin"><i class="fas fa-sign-in-alt"></i> Entrar</button>
+        <div class="login-erro" id="loginErro"><i class="fas fa-exclamation-circle"></i> Usuário ou senha incorretos</div>
+        <p style="margin-top:1.5rem;font-size:0.75rem;color:var(--texto-cinza);">
+            <i class="fas fa-shield-alt"></i> Login protegido com hash SHA-256
+        </p>
+        <button class="btn-login" style="margin-top:0.5rem;background:rgba(255,255,255,0.05);border:1px solid var(--admin-border);font-size:0.85rem;" onclick="fecharLoginAdmin()">
+            <i class="fas fa-times"></i> Cancelar
+        </button>
+    </div>
+</div>
+
+<!-- PAINEL ADMIN PRINCIPAL -->
+<div id="adminPanel">
+    <!-- SIDEBAR -->
+    <div class="admin-sidebar">
+        <div class="admin-sidebar-logo">
+            <div class="logo-icon">⚙️</div>
+            <div>
+                <h2>Admin Panel</h2>
+                <p>Parts J&L</p>
+            </div>
+        </div>
+        <nav class="admin-nav">
+            <div class="admin-nav-item active" data-page="dashboard" onclick="trocarPagina('dashboard')">
+                <i class="fas fa-tachometer-alt"></i><span>Dashboard</span>
+            </div>
+            <div class="admin-nav-item" data-page="produtos" onclick="trocarPagina('produtos')">
+                <i class="fas fa-box"></i><span>Produtos</span>
+            </div>
+            <div class="admin-nav-item" data-page="novo-produto" onclick="trocarPagina('novo-produto')">
+                <i class="fas fa-plus-circle"></i><span>Novo Produto</span>
+            </div>
+            <div class="admin-nav-divider"></div>
+            <div class="admin-nav-item" data-page="configuracoes" onclick="trocarPagina('configuracoes')">
+                <i class="fas fa-cog"></i><span>Configurações</span>
+            </div>
+            <div class="admin-nav-item" data-page="seguranca" onclick="trocarPagina('seguranca')">
+                <i class="fas fa-shield-alt"></i><span>Segurança</span>
+            </div>
+        </nav>
+        <div class="admin-sidebar-footer">
+            <button class="btn-sair-admin" onclick="sairAdmin()">
+                <i class="fas fa-sign-out-alt"></i> Sair do Admin
+            </button>
+        </div>
+    </div>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main class="admin-main">
+
+        <!-- DASHBOARD -->
+        <div class="admin-page active" id="page-dashboard">
+            <div class="admin-page-header">
+                <div class="admin-breadcrumb"><span>Admin</span> <i class="fas fa-chevron-right" style="font-size:0.65rem;"></i> <span class="current">Dashboard</span></div>
+                <h1>📊 Dashboard</h1>
+                <p>Visão geral da sua loja</p>
+            </div>
+            <div class="admin-stats" id="dashStats"></div>
+            <div class="admin-card">
+                <div class="admin-card-header">
+                    <h2><i class="fas fa-box" style="color:var(--azul);margin-right:0.5rem;"></i> Produtos Recentes</h2>
+                    <button class="btn-admin primary" onclick="trocarPagina('novo-produto')"><i class="fas fa-plus"></i> Adicionar</button>
+                </div>
+                <div style="overflow-x:auto;">
+                    <table class="produtos-admin-table" id="tabelaRecentes"></table>
+                </div>
+            </div>
+            <div class="info-box">
+                <i class="fas fa-lightbulb"></i>
+                <strong>Dica:</strong> As alterações são salvas automaticamente no navegador. Para migrar para outro dispositivo, use a função <strong>Exportar/Importar</strong> nas Configurações.
+            </div>
+        </div>
+
+        <!-- LISTA DE PRODUTOS -->
+        <div class="admin-page" id="page-produtos">
+            <div class="admin-page-header">
+                <div class="admin-breadcrumb"><span>Admin</span> <i class="fas fa-chevron-right" style="font-size:0.65rem;"></i> <span class="current">Produtos</span></div>
+                <h1>📦 Gerenciar Produtos</h1>
+                <p>Adicione, edite ou remova produtos da loja</p>
+            </div>
+            <div class="admin-card">
+                <div class="admin-card-header">
+                    <h2>Todos os Produtos (<span id="totalProdutosAdmin">0</span>)</h2>
+                    <div style="display:flex;gap:0.8rem;align-items:center;flex-wrap:wrap;">
+                        <input type="text" class="admin-search" id="buscaAdmin" placeholder="🔍 Buscar produto..." oninput="filtrarProdutosAdmin(this.value)">
+                        <button class="btn-admin primary" onclick="trocarPagina('novo-produto')"><i class="fas fa-plus"></i> Novo Produto</button>
+                    </div>
+                </div>
+                <div style="overflow-x:auto;">
+                    <table class="produtos-admin-table">
+                        <thead>
+                            <tr>
+                                <th>Imagem</th><th>Nome</th><th>Preço</th>
+                                <th>Categoria</th><th>Badge</th><th>Estoque</th><th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tabelaProdutosAdmin"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- NOVO / EDITAR PRODUTO -->
+        <div class="admin-page" id="page-novo-produto">
+            <div class="admin-page-header">
+                <div class="admin-breadcrumb"><span>Admin</span> <i class="fas fa-chevron-right" style="font-size:0.65rem;"></i> <span class="current" id="breadcrumbForm">Novo Produto</span></div>
+                <h1 id="tituloPaginaProduto">➕ Novo Produto</h1>
+                <p id="subtituloPaginaProduto">Preencha as informações do produto</p>
+            </div>
+            <div class="admin-card">
+                <div class="admin-card-header">
+                    <h2><i class="fas fa-box" style="color:var(--azul);margin-right:0.5rem;"></i> Informações do Produto</h2>
+                </div>
+                <div class="form-admin">
+                    <input type="hidden" id="produtoEditandoId">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label><i class="fas fa-tag"></i> Nome do Produto *</label>
+                            <input type="text" id="formNome" placeholder="Ex: Tela iPhone 13 Pro - OLED">
+                        </div>
+                        <div class="form-group">
+                            <label><i class="fas fa-th-large"></i> Categoria *</label>
+                            <select id="formCategoria">
+                                <option value="">Selecione a categoria</option>
+                                <option value="telas">📱 Telas</option>
+                                <option value="baterias">🔋 Baterias</option>
+                                <option value="conectores">🔌 Conectores</option>
+                                <option value="tampas">📲 Tampas Traseiras</option>
+                                <option value="ferramentas">🔧 Ferramentas</option>
+                                <option value="acessorios">📦 Acessórios</option>
+                                <option value="cabos">🎧 Fones/Cabos</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row single">
+                        <div class="form-group">
+                            <label><i class="fas fa-align-left"></i> Descrição do Produto</label>
+                            <textarea id="formDescricao" placeholder="Descreva o produto, compatibilidade, especificações..."></textarea>
+                        </div>
+                    </div>
+                    <div class="form-row triple">
+                        <div class="form-group">
+                            <label><i class="fas fa-dollar-sign"></i> Preço Atual (R$) *</label>
+                            <input type="number" id="formPreco" placeholder="189.90" step="0.01" min="0">
+                        </div>
+                        <div class="form-group">
+                            <label><i class="fas fa-tag"></i> Preço Original (R$)</label>
+                            <input type="number" id="formPrecoOriginal" placeholder="249.90 (opcional)" step="0.01" min="0">
+                            <span class="form-hint">Deixe vazio para não mostrar desconto</span>
+                        </div>
+                        <div class="form-group">
+                            <label><i class="fas fa-certificate"></i> Badge / Etiqueta</label>
+                            <select id="formBadge">
+                                <option value="">Sem badge</option>
+                                <option value="MAIS VENDIDO">🏆 MAIS VENDIDO</option>
+                                <option value="OFERTA">🔥 OFERTA</option>
+                                <option value="PROMOÇÃO">💥 PROMOÇÃO</option>
+                                <option value="NOVO">✨ NOVO</option>
+                                <option value="LANÇAMENTO">🚀 LANÇAMENTO</option>
+                                <option value="ESSENCIAL">⭐ ESSENCIAL</option>
+                                <option value="DESTAQUE">🎯 DESTAQUE</option>
+                                <option value="LIMITADO">⏰ LIMITADO</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label><i class="fas fa-image"></i> URL da Imagem do Produto</label>
+                            <input type="url" id="formImagem" placeholder="https://exemplo.com/imagem-produto.jpg" oninput="previewImagem(this.value)">
+                            <span class="form-hint">Cole o link direto da imagem (JPG, PNG, WebP)</span>
+                            <div class="img-preview-container">
+                                <div class="img-preview" id="imgPreviewBox">
+                                    <div class="img-preview-placeholder">
+                                        <i class="fas fa-image"></i>
+                                        <span>Preview da imagem aparecerá aqui</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label><i class="fas fa-warehouse"></i> Estoque</label>
+                            <div class="toggle-switch" style="margin-top:0.5rem;">
+                                <label class="toggle">
+                                    <input type="checkbox" id="formEstoque" checked>
+                                    <span class="toggle-slider"></span>
+                                </label>
+                                <span class="toggle-label">Produto disponível em estoque</span>
+                            </div>
+                            <div style="margin-top:1.5rem;padding:1rem;background:rgba(0,194,255,0.05);border-radius:8px;border:1px solid rgba(0,194,255,0.15);">
+                                <p style="font-size:0.8rem;color:var(--texto-cinza);margin-bottom:0.5rem;"><i class="fas fa-info-circle" style="color:var(--azul);"></i> <strong>Como adicionar imagem:</strong></p>
+                                <p style="font-size:0.78rem;color:var(--texto-cinza);line-height:1.5;">1. Faça upload em <strong>imgur.com</strong> ou <strong>postimages.org</strong><br>2. Copie o link direto da imagem<br>3. Cole no campo URL acima</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="display:flex;gap:1rem;flex-wrap:wrap;padding-top:0.5rem;">
+                        <button class="btn-admin primary" onclick="salvarProduto()" style="padding:0.9rem 2rem;font-size:1rem;"><i class="fas fa-save"></i> Salvar Produto</button>
+                        <button class="btn-admin secondary" onclick="limparFormProduto()"><i class="fas fa-eraser"></i> Limpar Form</button>
+                        <button class="btn-admin secondary" onclick="trocarPagina('produtos')"><i class="fas fa-arrow-left"></i> Voltar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CONFIGURAÇÕES -->
+        <div class="admin-page" id="page-configuracoes">
+            <div class="admin-page-header">
+                <div class="admin-breadcrumb"><span>Admin</span> <i class="fas fa-chevron-right" style="font-size:0.65rem;"></i> <span class="current">Configurações</span></div>
+                <h1>⚙️ Configurações da Loja</h1>
+                <p>Gerencie informações de contato, WhatsApp e dados da loja</p>
+            </div>
+            <div class="admin-card">
+                <div class="admin-card-header">
+                    <h2><i class="fab fa-whatsapp" style="color:var(--verde-whats);margin-right:0.5rem;"></i> WhatsApp & Contato</h2>
+                </div>
+                <div class="form-admin">
+                    <div class="info-box">
+                        <i class="fab fa-whatsapp"></i>
+                        <strong>Número do WhatsApp:</strong> Digite apenas números com DDI + DDD (ex: 5511999999999 para SP)
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label><i class="fab fa-whatsapp" style="color:var(--verde-whats);"></i> Número do WhatsApp *</label>
+                            <input type="text" id="configWhatsapp" placeholder="5511999999999">
+                            <span class="form-hint">DDI + DDD + número (somente dígitos)</span>
+                        </div>
+                        <div class="form-group">
+                            <label><i class="fas fa-clock"></i> Horário de Atendimento</label>
+                            <input type="text" id="configHorario" placeholder="Seg-Sex: 8h às 18h | Sáb: 8h às 13h">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label><i class="fab fa-instagram"></i> Instagram</label>
+                            <input type="text" id="configInstagram" placeholder="@partsjel">
+                        </div>
+                        <div class="form-group">
+                            <label><i class="fas fa-store"></i> Nome da Loja</label>
+                            <input type="text" id="configNomeLoja" placeholder="Parts J&L">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="admin-card">
+                <div class="admin-card-header">
+                    <h2><i class="fas fa-percent" style="color:var(--azul);margin-right:0.5rem;"></i> Pagamento</h2>
+                </div>
+                <div class="form-admin">
+                    <div class="form-row triple">
+                        <div class="form-group">
+                            <label><i class="fas fa-percent"></i> Desconto PIX (%)</label>
+                            <input type="number" id="configPixDesconto" placeholder="5" min="0" max="100">
+                        </div>
+                        <div class="form-group">
+                            <label><i class="fas fa-credit-card"></i> Máx. Parcelas Cartão</label>
+                            <input type="number" id="configParcelas" placeholder="12" min="1" max="24">
+                        </div>
+                        <div class="form-group">
+                            <label>&nbsp;</label>
+                            <div style="padding-top:0.5rem;font-size:0.8rem;color:var(--texto-cinza);">
+                                <i class="fas fa-info-circle" style="color:var(--azul);"></i> Informações exibidas na seção de pagamento
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="admin-card">
+                <div class="admin-card-header">
+                    <h2><i class="fas fa-database" style="color:var(--magenta);margin-right:0.5rem;"></i> Backup de Dados</h2>
+                </div>
+                <div class="form-admin">
+                    <p style="color:var(--texto-cinza);margin-bottom:1.5rem;font-size:0.9rem;">
+                        Exporte todos os produtos e configurações para um arquivo JSON. Para usar em outro dispositivo, importe o arquivo exportado.
+                    </p>
+                    <div style="display:flex;gap:1rem;flex-wrap:wrap;">
+                        <button class="btn-admin success" onclick="exportarDados()"><i class="fas fa-download"></i> Exportar Dados (JSON)</button>
+                        <label class="btn-admin warning" style="cursor:pointer;">
+                            <i class="fas fa-upload"></i> Importar Dados (JSON)
+                            <input type="file" accept=".json" style="display:none;" onchange="importarDados(this)">
+                        </label>
+                        <button class="btn-admin danger" onclick="confirmarResetDados()"><i class="fas fa-trash-alt"></i> Resetar para Padrão</button>
+                    </div>
+                </div>
+            </div>
+            <div style="display:flex;gap:1rem;flex-wrap:wrap;padding:0 0 1rem 0;">
+                <button class="btn-admin primary" onclick="salvarConfiguracoes()" style="padding:0.9rem 2rem;font-size:1rem;">
+                    <i class="fas fa-save"></i> Salvar Configurações
+                </button>
+            </div>
+        </div>
+
+        <!-- SEGURANÇA -->
+        <div class="admin-page" id="page-seguranca">
+            <div class="admin-page-header">
+                <div class="admin-breadcrumb"><span>Admin</span> <i class="fas fa-chevron-right" style="font-size:0.65rem;"></i> <span class="current">Segurança</span></div>
+                <h1>🔒 Segurança de Acesso</h1>
+                <p>Altere as credenciais de acesso ao painel admin</p>
+            </div>
+            <div class="admin-card">
+                <div class="admin-card-header">
+                    <h2><i class="fas fa-user-shield" style="color:var(--roxo);margin-right:0.5rem;"></i> Credenciais de Acesso</h2>
+                </div>
+                <div class="form-admin">
+                    <div class="info-box">
+                        <i class="fas fa-shield-alt" style="color:var(--verde-whats);"></i>
+                        <strong>Segurança:</strong> As senhas são armazenadas como hash SHA-256 — jamais em texto puro. Anote bem as credenciais antes de salvar.
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label><i class="fas fa-user"></i> Novo Usuário</label>
+                            <input type="text" id="novoUsuario" placeholder="Novo nome de usuário" autocomplete="new-password">
+                        </div>
+                        <div class="form-group">
+                            <label><i class="fas fa-lock"></i> Nova Senha</label>
+                            <input type="password" id="novaSenha" placeholder="Nova senha (mín. 6 caracteres)" autocomplete="new-password">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label><i class="fas fa-lock"></i> Confirmar Nova Senha</label>
+                            <input type="password" id="confirmarSenha" placeholder="Repita a nova senha" autocomplete="new-password">
+                        </div>
+                        <div class="form-group">
+                            <label><i class="fas fa-key"></i> Senha Atual (para confirmar)</label>
+                            <input type="password" id="senhaAtual" placeholder="Digite sua senha atual" autocomplete="current-password">
+                        </div>
+                    </div>
+                    <button class="btn-admin primary" onclick="alterarCredenciais()" style="padding:0.9rem 2rem;font-size:1rem;">
+                        <i class="fas fa-save"></i> Salvar Novas Credenciais
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    </main>
+</div>
+
+<!-- TOAST NOTIFICATION -->
+<div class="admin-toast" id="adminToast"></div>
+
+<!-- MODAL DE CONFIRMAÇÃO -->
+<div class="confirm-modal" id="confirmModal">
+    <div class="confirm-box">
+        <div class="confirm-icon" id="confirmIcon">⚠️</div>
+        <h3 id="confirmTitle">Confirmar ação</h3>
+        <p id="confirmMsg">Tem certeza que deseja continuar?</p>
+        <div class="confirm-buttons">
+            <button class="btn-admin danger" id="confirmYes">Confirmar</button>
+            <button class="btn-admin secondary" onclick="fecharConfirm()">Cancelar</button>
+        </div>
+    </div>
+</div>
+
+<!-- Scripts: main.js primeiro, depois admin.js -->
+<script src="main.js"></script>
+<script src="admin.js"></script>
+
+</body>
+</html>
